@@ -1,0 +1,46 @@
+@mixin navbar-styles {
+    background-color: $primary; 
+    border-radius: 0 0 0 24px;
+    padding: 1rem; 
+
+    &__list {
+        justify-content: center;
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        display: flex; 
+    }
+
+    &__item {
+        margin-right: 20px; 
+    }
+
+    &__link {
+        font-family: 'BaskervvilleSC';
+        text-decoration: none; 
+        color: $secondary; 
+        font-size: 20px;
+        position: relative;
+
+        &:hover {
+            color: $secondary; 
+        }
+
+        &::after {
+            content: ""; // Contenu vide pour la barre
+            position: absolute; // Positionner de manière absolue
+            left: 0; // Alignement à gauche
+            bottom: -5px; // Position sous le texte
+            height: 1px; // Hauteur de la barre
+            width: 100%; // Largeur complète
+            background-color: $secondary; // Couleur de la barre
+            transform: scaleX(0); // Initialiser la transformation
+            transition: transform 0.3s ease; // Transition pour le survol
+        }
+
+        // Lors du survol du lien, activer la barre
+        &:hover::after {
+            transform: scaleX(1); // Activer la barre
+        }
+    }
+}

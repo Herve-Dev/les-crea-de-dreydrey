@@ -1,0 +1,13 @@
+@import './variables';
+@import './mixins';
+@import './fonts';
+
+body {
+   margin: 0;
+   padding: 0; 
+   background-color: $secondary
+}
+
+.navbar {
+    @include navbar-styles;
+}
