@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/scss/main.scss'],
 
-  // Configuration du loader pour SCSS
   vite: {
     css: {
       preprocessorOptions: {
@@ -13,6 +12,7 @@ export default defineNuxtConfig({
             @import "@/assets/scss/_variables.scss";
             @import "@/assets/scss/_mixins.scss";
             @import "@/assets/scss/_fonts.scss";
+            @import "@/assets/scss/_banner.scss";
           `
         }
       }
