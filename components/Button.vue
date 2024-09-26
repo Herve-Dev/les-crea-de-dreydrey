@@ -1,24 +1,16 @@
 <template>
-    <button :class="buttonClass">
-        Découvrire mes créations
+    <button>
+      {{ buttonText }}
     </button>
 </template>
 
 <script>
 export default {
-  name: 'CustomButton',
-  props: {
-    buttonClass: {
-      type: String,
-      default: ''
+    props: {
+        buttonText: {
+            type: String,
+            required: true,
+        }
     }
-  }
-};
-</script>
-
-<style lang="scss" scoped>
-@import "/assets/scss/_button.scss"; 
-button {
-  @include button(); 
 }
-</style>
+</script>

@@ -26,26 +26,17 @@
             </p>
         </section>
         <section class="banner__button-section">
-            <CustomButton buttonClass="banner__button">Découvrir mes créations</CustomButton>
+            <BtnBanner buttonText="Découvrir mes créations" class="banner__button" />
         </section>
     </article>
 </template>
 
 <script>
-import CustomButton from './components/Button.vue';
+    import BtnBanner from '~/components/Button.vue'; 
 
-export default {
-  name: 'Banner',
-  components: {
-    CustomButton
-  }
-};
+    export default {
+        components: {
+            BtnBanner,
+        },
+    };
 </script>
-
-<style lang="scss" scoped>
-@import '/assets/scss/button';
-
-.banner__button {
-  @include button();
-}
-</style>
