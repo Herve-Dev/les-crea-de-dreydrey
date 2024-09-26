@@ -1,14 +1,25 @@
 @mixin navbar-styles {
     background-color: $primary; 
     border-radius: 0 0 0 24px;
-    padding: 1rem; 
+    padding: 1.5rem; 
 
     &__list {
-        justify-content: center;
+        justify-content: space-between;
         list-style: none; 
         padding: 0; 
         margin: 0; 
-        display: flex; 
+        display: flex;
+        
+        & > .navbar__right {
+            display: flex; 
+            justify-content: flex-end;
+        }
+
+        & > .navbar__center {
+            display: flex; 
+            flex-grow: 1;
+            justify-content: center;
+        }
     }
 
     &__item {
@@ -27,20 +38,19 @@
         }
 
         &::after {
-            content: ""; // Contenu vide pour la barre
-            position: absolute; // Positionner de manière absolue
-            left: 0; // Alignement à gauche
-            bottom: -5px; // Position sous le texte
-            height: 1px; // Hauteur de la barre
-            width: 100%; // Largeur complète
-            background-color: $secondary; // Couleur de la barre
-            transform: scaleX(0); // Initialiser la transformation
-            transition: transform 0.3s ease; // Transition pour le survol
+            content: ""; 
+            position: absolute; 
+            left: 0; 
+            bottom: -5px; 
+            height: 1px; 
+            width: 100%; 
+            background-color: $secondary; 
+            transform: scaleX(0); 
+            transition: transform 0.3s ease; 
         }
 
-        // Lors du survol du lien, activer la barre
         &:hover::after {
-            transform: scaleX(1); // Activer la barre
+            transform: scaleX(1); 
         }
     }
 }
