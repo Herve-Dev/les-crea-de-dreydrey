@@ -1,4 +1,6 @@
 <template>
-    <h1>Hello</h1>
+    <main>
+        <h1>Hello</h1>
+    </main>
 </template>
 

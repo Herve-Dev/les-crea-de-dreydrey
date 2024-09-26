@@ -1,4 +1,4 @@
-@mixin button($background-color: $primary, $hover-color: #ff5437, $color: #fff) {
+@mixin button($background-color: $primary, $hover-color: #ff5437, $color: $secondary) {
     background-color: $background-color;
     color: $color;
     border: none;
