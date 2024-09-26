@@ -25,5 +25,27 @@
                 Explorez mon univers et découvrez des créations uniques, faites avec passion <br><br>
             </p>
         </section>
+        <section class="banner__button-section">
+            <CustomButton buttonClass="banner__button">Découvrir mes créations</CustomButton>
+        </section>
     </article>
 </template>
+
+<script>
+import CustomButton from './components/Button.vue';
+
+export default {
+  name: 'Banner',
+  components: {
+    CustomButton
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+@import '/assets/scss/button';
+
+.banner__button {
+  @include button();
+}
+</style>

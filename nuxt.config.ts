@@ -13,6 +13,7 @@ export default defineNuxtConfig({
             @import "@/assets/scss/_mixins.scss";
             @import "@/assets/scss/_fonts.scss";
             @import "@/assets/scss/_banner.scss";
+            @import "@/assets/scss/_button.scss";
           `
         }
       }

@@ -1,0 +1,17 @@
+@mixin button($background-color: $primary, $hover-color: #ff5437, $color: #fff) {
+    background-color: $background-color;
+    color: $color;
+    border: none;
+    padding: 10px 30px;
+    margin: 20px;
+    font-size: 16px;
+    border-radius: 24px 0 24px 0;
+    height: 50px;
+    font-family: "BaskervilleSC";
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
