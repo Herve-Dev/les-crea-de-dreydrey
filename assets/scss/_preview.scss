@@ -1,0 +1,15 @@
+.preview {
+    border: solid 3px red;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        font-family: 'BaskervvilleSC';
+    }
+
+}

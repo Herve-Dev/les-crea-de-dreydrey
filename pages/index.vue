@@ -30,15 +30,25 @@
                 <BtnBanner buttonText="Découvrir mes créations" class="banner__button" />
             </section>
         </article>
+
+        <article class="preview">
+            <section class="preview__header">
+                <h2 class="preview__title">Aperçu de mes créations</h2>
+            </section>
+            <section class="preview__content">
+                <CardPreview/>
+            </section>
+        </article>
     </main>
 </template>
 
 <script setup>
     import BtnBanner from '~/components/Button.vue'; 
+    import CardPreview from '~/components/Card.vue';
     import {useHead} from '@unhead/vue'
 
     useHead({
-        title: 'Accueil - Les Créa de DreyDrey',
+        title: 'Les Créa de DreyDrey',
         meta: [
             { name: 'description', content: 'Découvrez les créations uniques en résine époxy.' },
             { name: 'keywords', content: 'résine époxy, art, créations, bijoux' },
