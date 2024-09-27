@@ -36,7 +36,7 @@
                 <h2 class="preview__title">Aperçu de mes créations</h2>
             </section>
             <section class="preview__content">
-                <CardPreview/>
+                <CardPreview v-for="n in 6" :key="n"/>
             </section>
         </article>
     </main>

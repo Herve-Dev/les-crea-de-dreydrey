@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px $primary;
+    margin: 30px;
+    padding: 20px;
+    background-color: $primary;
+
+    
+    &__img {
+        width: 315px;
+        height: 236px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    &__btn-preview {
+        @include button($secondary, $primary);
+    }
+
+    &__title {
+        color: $secondary;
+    }
+
+    
+}
