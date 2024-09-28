@@ -3,15 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 2px $primary;
-    margin: 30px;
+    border: solid 2px yellow;
+    margin: 10px;
     padding: 20px;
     background-color: $primary;
 
+    width: 300px;
     
     &__img {
-        width: 315px;
-        height: 236px;
+        width: 90%;
         object-fit: cover;
         border-radius: 20px;
     }
@@ -22,7 +22,5 @@
 
     &__title {
         color: $secondary;
-    }
-
-    
+    } 
 }

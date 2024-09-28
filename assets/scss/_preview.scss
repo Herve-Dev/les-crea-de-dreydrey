@@ -2,14 +2,24 @@
     border: solid 3px red;
     display: flex;
     flex-direction: column;
+    //justify-content: center;
+    //flex-wrap: wrap;
 
     &__header {
         display: flex;
         justify-content: center;
+        width: 100%;
+        border: solid 3px purple;
     }
 
     &__title {
         font-family: 'BaskervvilleSC';
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
 }
