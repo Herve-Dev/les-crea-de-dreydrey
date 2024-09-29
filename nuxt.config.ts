@@ -4,13 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/scss/main.scss'],
 
-  
   devServer: {
     host: '0.0.0.0',  
     port: 3000,        
   },
  
-
   vite: {
     css: {
       preprocessorOptions: {
@@ -23,9 +21,21 @@ export default defineNuxtConfig({
             @import "@/assets/scss/_button.scss";
             @import "@/assets/scss/_preview.scss";
             @import "@/assets/scss/_card.scss";
+            @import "@/assets/scss/_modal.scss";
           `
         }
       }
     }
-  }
+  },
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0'
+        }
+      ]
+    }
+  },
 })

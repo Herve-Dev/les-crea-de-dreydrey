@@ -36,16 +36,53 @@
                 <h2 class="preview__title">Aperçu de mes créations</h2>
             </section>
             <section class="preview__content">
-                <CardPreview v-for="n in 6" :key="n"/>
+                <CardPreview 
+                    v-for="post in posts"
+                    :key="post.id"
+                    :title="getFirstThreeWords(post.title)"
+                    @click="openModal(post)"
+                />
             </section>
+
+            <Modal
+                v-if="selectedPost"
+                :title="selectedPost.title"
+                :body="selectedPost.body"
+                :isVisible="isModalVisible"
+                @close="closeModal"
+            />
         </article>
     </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
     import BtnBanner from '~/components/Button.vue'; 
     import CardPreview from '~/components/Card.vue';
-    import {useHead} from '@unhead/vue'
+    import Modal from '~/components/Modal.vue';
+    import {useHead} from '@unhead/vue';
+
+    // Variables de contrôle de la modal
+let selectedPost = ref(null);  // Le post sélectionné pour la modal
+let isModalVisible = ref(false);  // Contrôle de la visibilité de la modal
+
+// Fonction pour ouvrir la modal et définir le post sélectionné
+const openModal = (post: any) => {
+  selectedPost.value = post;
+  isModalVisible.value = true;
+};
+
+// Fonction pour fermer la modal
+const closeModal = () => {
+  isModalVisible.value = false;
+  selectedPost.value = null;
+};
+
+    const { data: posts } = await useFetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
+
+    // Fonction pour récupérer les 3 premiers mots du titre
+    function getFirstThreeWords(title: string) {
+        return title.split(' ').slice(0, 3).join(' ');
+    }
 
     useHead({
         title: 'Les Créa de DreyDrey',
