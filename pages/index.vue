@@ -55,18 +55,18 @@
     </main>
 </template>
 
-<script setup lang="ts">
+<script setup >
     import BtnBanner from '~/components/Button.vue'; 
     import CardPreview from '~/components/Card.vue';
     import Modal from '~/components/Modal.vue';
     import {useHead} from '@unhead/vue';
 
-    // Variables de contrôle de la modal
+// Variables de contrôle de la modal
 let selectedPost = ref(null);  // Le post sélectionné pour la modal
 let isModalVisible = ref(false);  // Contrôle de la visibilité de la modal
 
 // Fonction pour ouvrir la modal et définir le post sélectionné
-const openModal = (post: any) => {
+const openModal = (post) => {
   selectedPost.value = post;
   isModalVisible.value = true;
 };
@@ -80,7 +80,7 @@ const closeModal = () => {
     const { data: posts } = await useFetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
 
     // Fonction pour récupérer les 3 premiers mots du titre
-    function getFirstThreeWords(title: string) {
+    function getFirstThreeWords(title) {
         return title.split(' ').slice(0, 3).join(' ');
     }
 
