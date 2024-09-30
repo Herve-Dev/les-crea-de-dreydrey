@@ -22,6 +22,7 @@ export default defineNuxtConfig({
             @import "@/assets/scss/_preview.scss";
             @import "@/assets/scss/_card.scss";
             @import "@/assets/scss/_modal.scss";
+            @import "@/assets/scss/_footer.scss";
           `
         }
       }

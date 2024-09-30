@@ -59,23 +59,22 @@
     import BtnBanner from '~/components/Button.vue'; 
     import CardPreview from '~/components/Card.vue';
     import Modal from '~/components/Modal.vue';
-    import {useHead} from '@unhead/vue';
 
-// Variables de contrôle de la modal
-let selectedPost = ref(null);  // Le post sélectionné pour la modal
-let isModalVisible = ref(false);  // Contrôle de la visibilité de la modal
+    // Variables de contrôle de la modal
+    let selectedPost = ref(null);  // Le post sélectionné pour la modal
+    let isModalVisible = ref(false);  // Contrôle de la visibilité de la modal
 
-// Fonction pour ouvrir la modal et définir le post sélectionné
-const openModal = (post) => {
-  selectedPost.value = post;
-  isModalVisible.value = true;
-};
+    // Fonction pour ouvrir la modal et définir le post sélectionné
+    const openModal = (post) => {
+    selectedPost.value = post;
+    isModalVisible.value = true;
+    };
 
-// Fonction pour fermer la modal
-const closeModal = () => {
-  isModalVisible.value = false;
-  selectedPost.value = null;
-};
+    // Fonction pour fermer la modal
+    const closeModal = () => {
+    isModalVisible.value = false;
+    selectedPost.value = null;
+    };
 
     const { data: posts } = await useFetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
 
@@ -83,19 +82,4 @@ const closeModal = () => {
     function getFirstThreeWords(title) {
         return title.split(' ').slice(0, 3).join(' ');
     }
-
-    useHead({
-        title: 'Les Créa de DreyDrey',
-        meta: [
-            { name: 'description', content: 'Découvrez les créations uniques en résine époxy.' },
-            { name: 'keywords', content: 'résine époxy, art, créations, bijoux' },
-            { name: 'author', content: 'Audrey' },
-            { property: 'og:title', content: 'Accueil - Les Créa de DreyDrey' },
-            { property: 'og:description', content: 'Découvrez des pièces uniques en résine époxy.' },
-            { property: 'og:image', content: '/assets/images/logo_les_crea_de_dreydrey.webp' },
-        ],
-        htmlAttrs: {
-            lang: 'fr' 
-        }
-    })
 </script>
