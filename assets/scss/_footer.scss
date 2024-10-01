@@ -1,0 +1,39 @@
+footer {
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    li {
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    h4 {
+        color: $secondary;
+    }
+}
+
+.section-copyright {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin: 0;
+        padding: 0;
+        color: $secondary;
+        font-family: 'BaskervvilleSC';
+    }
+}
