@@ -37,9 +37,10 @@
             </section>
             <section class="preview__content">
                 <CardPreview 
-                    v-for="post in posts"
+                    v-for="(post, index) in posts"
                     :key="post.id"
                     :title="getFirstThreeWords(post.title)"
+                    :images="getImagesForPost(index)"
                     @click="openModal(post)"
                 />
             </section>
@@ -59,6 +60,7 @@
     import BtnBanner from '~/components/Button.vue'; 
     import CardPreview from '~/components/Card.vue';
     import Modal from '~/components/Modal.vue';
+    import potGraphique from '~/assets/images/pot_graphique.webp';
 
     // Variables de contrôle de la modal
     let selectedPost = ref(null);  // Le post sélectionné pour la modal
@@ -82,4 +84,17 @@
     function getFirstThreeWords(title) {
         return title.split(' ').slice(0, 3).join(' ');
     }
+
+    const imagesArray = [
+        potGraphique,
+        potGraphique,
+        potGraphique,
+        potGraphique,
+    ];
+
+    // Fonction pour récupérer les images pour un post donné
+    function getImagesForPost(index) {
+        return imagesArray; // Pour éviter les erreurs si plus de posts que d'images
+    }
+    
 </script>
